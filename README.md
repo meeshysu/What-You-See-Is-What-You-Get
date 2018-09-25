@@ -1,1 +1,3 @@
-# What-You-See-Is-What-You-Get
+# What You See Is What You Get! 
+
+A bonus project!
