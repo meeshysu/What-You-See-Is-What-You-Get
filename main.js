@@ -63,29 +63,24 @@ const cardBuilder = () => {
         cardString += `</footer>`;
         cardString += `</div>`;
         printToDom(cardString, 'iHasPeople');
-    }  
+    }
 };
 cardBuilder();
 
 //border
-//function, get element by class name, for loop, event listener, target, classListtoggle 
+// function, get element by class name, for loop, event listener, target, classListtoggle 
 
-// const peoplesBorder = () => {
-//     const dasPeepsBorder = document.getElementsByClassName("youHasPeople");
-//     for (i = 0; i < dasPeepsBorder.length; i++) {
-//         dasPeepsBorder[i].document.getElementsByClassName('click', (e) => {
-//             .innerHTML = e.target.classList="toggle";
-//         })
-
-//     }
-// }
-// peoplesBorder();
-
-
-const peoplesBorder = document.getElementById('iHasPeople');
-const justABorder = (e) => {
-    for (i = 0; i < justABorder.length; i++) {    
-    justABorder[i].document.getElementById('wordsHere').classList.toggle('makeStuff');
+const cardBorder = () => {
+    const cardStringBorder = document.getElementsByClassName('youHasPeople');
+    for (let i = 0; i < cardStringBorder.length; i++) {
+        const elementS = cardStringBorder[i];
+        elementS.addEventListener('click', (element) => {
+            const ranOutOfNames = element.target.parentNode.parentNode;
+            ranOutOfNames.classList.toggle('makeStuff');
+            
+        })
+    }
 }
-}
-peoplesBorder.addEventListener('click', justABorder);
+cardBorder();
+
+
