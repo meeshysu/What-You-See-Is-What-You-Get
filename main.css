@@ -1,0 +1,25 @@
+
+.youHasPeople {
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 1%;
+    padding: 20px;
+}
+
+.youHasPeople:nth-child(odd) {
+    background: lightblue;
+}
+
+.youHasPeople:nth-child(even) {
+    background: lightyellow;
+}
+
+.thePeoplesSection > img {
+    width: 50%;
+    height: 40%;
+}
+
+#typeInMe {
+    margin: 25px;
+}
