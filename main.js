@@ -66,3 +66,16 @@ const cardBuilder = () => {
     }  
 };
 cardBuilder();
+
+//border
+//function, get element by class name, for loop, event listener, target, classListtoggle 
+
+const peoplesBorder = () => {
+    const dasPeepsBorder = document.getElementsByClassName("youHasPeople");
+    for (i = 0; i < dasPeepsBorder.length; i++) {
+        dasPeepsBorder[i].document.getElementById('click', (e) => {
+            e.target.classList="toggle";
+        })
+
+    }
+}
