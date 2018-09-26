@@ -69,40 +69,27 @@ const cardBuilder = () => {
 cardBuilder();
 
 //border
-// function, get element by class name, for loop, event listener, target, classListtoggle 
-
-// const cardBorder = () => {
-//     const cardStringBorder = document.getElementsByClassName('youHasPeople');
-//     for (let i = 0; i < cardStringBorder.length; i++) {
-//         const elementS = cardStringBorder[i];
-//         elementS.addEventListener('click', (element) => {
-//             const ranOutOfNames = element.target.parentNode.parentNode;
-//             ranOutOfNames.classList.toggle('makeStuff');
-
-//         })
-//     }
-// }
-// cardBorder();
-
 
 const cardBorder = () => {
     const cardElem = document.getElementsByClassName('youHasPeople');
     for (let i = 0; i < cardElem.length; i++) {
-    const targeted = cardElem[i];
-    targeted.addEventListener('click', (e) => {
-        targeted.classList.toggle('makeStuff')
-   
-    })  
-}
+        const targeted = cardElem[i];
+        targeted.addEventListener('click', (e) => {
+            targeted.classList.toggle('makeStuff');
+        })
+    }
 }
 cardBorder();
 
+//focus
 
-
-
-// const cardElem = document.getElementById('iHasPeople');
-// cardElem.addEventListener('click', (e) => {
-//     e.target(cardBuilder);
-
-    
-// })
+const inputFocus = () => {
+    const inputElem = document.getElementsByClassName('youHasPeople');
+    for (let i = 0; i < inputElem.length; i++) {
+        const targeted = inputElem[i];
+        targeted.addEventListener('click', (e) => {
+            document.getElementById('typeInMe').focus();
+        })
+    }
+}
+inputFocus();
