@@ -25,5 +25,6 @@
 }
 
 .makeStuff {
-    border: 2px coral dotted;
+    outline: 2px coral dotted;
+
 }

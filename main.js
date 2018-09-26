@@ -46,6 +46,7 @@ const printToDom = (stringToPrint, divId) => {
     selectedDiv.innerHTML += stringToPrint;
 }
 
+
 const cardBuilder = () => {
     for (let i = 0; i < arrayOfPeople.length; i++) {
         let cardString = `<div id="wordsHere" class = "youHasPeople w-25">`;
@@ -70,17 +71,38 @@ cardBuilder();
 //border
 // function, get element by class name, for loop, event listener, target, classListtoggle 
 
+// const cardBorder = () => {
+//     const cardStringBorder = document.getElementsByClassName('youHasPeople');
+//     for (let i = 0; i < cardStringBorder.length; i++) {
+//         const elementS = cardStringBorder[i];
+//         elementS.addEventListener('click', (element) => {
+//             const ranOutOfNames = element.target.parentNode.parentNode;
+//             ranOutOfNames.classList.toggle('makeStuff');
+
+//         })
+//     }
+// }
+// cardBorder();
+
+
 const cardBorder = () => {
-    const cardStringBorder = document.getElementsByClassName('youHasPeople');
-    for (let i = 0; i < cardStringBorder.length; i++) {
-        const elementS = cardStringBorder[i];
-        elementS.addEventListener('click', (element) => {
-            const ranOutOfNames = element.target.parentNode.parentNode;
-            ranOutOfNames.classList.toggle('makeStuff');
-            
-        })
-    }
+    const cardElem = document.getElementsByClassName('youHasPeople');
+    for (let i = 0; i < cardElem.length; i++) {
+    const targeted = cardElem[i];
+    targeted.addEventListener('click', (e) => {
+        targeted.classList.toggle('makeStuff')
+   
+    })  
+}
 }
 cardBorder();
 
 
+
+
+// const cardElem = document.getElementById('iHasPeople');
+// cardElem.addEventListener('click', (e) => {
+//     e.target(cardBuilder);
+
+    
+// })
