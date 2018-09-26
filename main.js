@@ -48,7 +48,7 @@ const printToDom = (stringToPrint, divId) => {
 
 const cardBuilder = () => {
     for (let i = 0; i < arrayOfPeople.length; i++) {
-        let cardString = `<div class = "youHasPeople w-25">`;
+        let cardString = `<div id="wordsHere" class = "youHasPeople w-25">`;
         cardString += `<header class="thePeoplesHeader">`;
         cardString += `<h3>${arrayOfPeople[i].title}</h3>`;
         cardString += `<h3>${arrayOfPeople[i].name}</h3>`;
@@ -70,12 +70,22 @@ cardBuilder();
 //border
 //function, get element by class name, for loop, event listener, target, classListtoggle 
 
-const peoplesBorder = () => {
-    const dasPeepsBorder = document.getElementsByClassName("youHasPeople");
-    for (i = 0; i < dasPeepsBorder.length; i++) {
-        dasPeepsBorder[i].document.getElementById('click', (e) => {
-            e.target.classList="toggle";
-        })
+// const peoplesBorder = () => {
+//     const dasPeepsBorder = document.getElementsByClassName("youHasPeople");
+//     for (i = 0; i < dasPeepsBorder.length; i++) {
+//         dasPeepsBorder[i].document.getElementsByClassName('click', (e) => {
+//             .innerHTML = e.target.classList="toggle";
+//         })
 
-    }
+//     }
+// }
+// peoplesBorder();
+
+
+const peoplesBorder = document.getElementById('iHasPeople');
+const justABorder = (e) => {
+    for (i = 0; i < justABorder.length; i++) {    
+    justABorder[i].document.getElementById('wordsHere').classList.toggle('makeStuff');
 }
+}
+peoplesBorder.addEventListener('click', justABorder);

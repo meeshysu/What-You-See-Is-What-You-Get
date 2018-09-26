@@ -24,3 +24,7 @@
     margin: 25px;
 }
 
+.makeStuff {
+    display: block!important;
+    border: 2px coral dotted;
+}
