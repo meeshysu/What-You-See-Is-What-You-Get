@@ -46,9 +46,10 @@ const printToDom = (stringToPrint, divId) => {
     selectedDiv.innerHTML += stringToPrint;
 }
 
+
 const cardBuilder = () => {
     for (let i = 0; i < arrayOfPeople.length; i++) {
-        let cardString = `<div class = "youHasPeople w-25">`;
+        let cardString = `<div id="wordsHere" class = "youHasPeople w-25">`;
         cardString += `<header class="thePeoplesHeader">`;
         cardString += `<h3>${arrayOfPeople[i].title}</h3>`;
         cardString += `<h3>${arrayOfPeople[i].name}</h3>`;
@@ -63,19 +64,45 @@ const cardBuilder = () => {
         cardString += `</footer>`;
         cardString += `</div>`;
         printToDom(cardString, 'iHasPeople');
-    }  
+    }
 };
 cardBuilder();
 
 //border
-//function, get element by class name, for loop, event listener, target, classListtoggle 
+// function, get element by class name, for loop, event listener, target, classListtoggle 
 
-const peoplesBorder = () => {
-    const dasPeepsBorder = document.getElementsByClassName("youHasPeople");
-    for (i = 0; i < dasPeepsBorder.length; i++) {
-        dasPeepsBorder[i].document.getElementById('click', (e) => {
-            e.target.classList="toggle";
-        })
+// const cardBorder = () => {
+//     const cardStringBorder = document.getElementsByClassName('youHasPeople');
+//     for (let i = 0; i < cardStringBorder.length; i++) {
+//         const elementS = cardStringBorder[i];
+//         elementS.addEventListener('click', (element) => {
+//             const ranOutOfNames = element.target.parentNode.parentNode;
+//             ranOutOfNames.classList.toggle('makeStuff');
 
-    }
+//         })
+//     }
+// }
+// cardBorder();
+
+
+const cardBorder = () => {
+    const cardElem = document.getElementsByClassName('youHasPeople');
+    for (let i = 0; i < cardElem.length; i++) {
+    const targeted = cardElem[i];
+    targeted.addEventListener('click', (e) => {
+        targeted.classList.toggle('makeStuff')
+   
+    })  
 }
+}
+cardBorder();
+
+
+
+
+// const cardElem = document.getElementById('iHasPeople');
+// cardElem.addEventListener('click', (e) => {
+//     e.target(cardBuilder);
+
+    
+// })
