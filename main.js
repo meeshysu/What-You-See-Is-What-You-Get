@@ -56,7 +56,7 @@ const cardBuilder = () => {
         cardString += `</header>`;
         cardString += `<section class="thePeoplesSection">`;
         cardString += `<img src='${arrayOfPeople[i].image}'</img>`;
-        cardString += `<p>${arrayOfPeople[i].bio}</p>`;
+        cardString += `<p class="peepsBio">${arrayOfPeople[i].bio}</p>`;
         cardString += `</section>`;
         cardString += `<footer class="thePeoplesFooter">`;
         cardString += `<p>${arrayOfPeople[i].lifespan.birth}</p>`;
@@ -66,7 +66,7 @@ const cardBuilder = () => {
         printToDom(cardString, 'iHasPeople');
     }
 };
-cardBuilder();
+
 
 //border
 
@@ -78,8 +78,8 @@ const cardBorder = () => {
             targeted.classList.toggle('makeStuff');
         })
     }
-}
-cardBorder();
+};
+
 
 //focus
 
@@ -91,5 +91,21 @@ const inputFocus = () => {
             document.getElementById('typeInMe').focus();
         })
     }
-}
+};
+
+
+
+//keyup, etc.
+
+const inputText = () => {
+    const inputElem = document.getElementById('iHasPeople');
+    const children = inputElem.children;
+    
+    const selectedOnes = children.children[1].firstElementChild;
+
+};
+
+cardBuilder();
+cardBorder();
 inputFocus();
+inputText();
