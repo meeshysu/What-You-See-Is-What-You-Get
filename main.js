@@ -46,10 +46,11 @@ const printToDom = (stringToPrint, divId) => {
     selectedDiv.innerHTML += stringToPrint;
 }
 
+const bioInput = document.getElementById('typeInMe');
 
 const cardBuilder = () => {
     for (let i = 0; i < arrayOfPeople.length; i++) {
-        let cardString = `<div id="wordsHere" class = "youHasPeople w-25">`;
+        let cardString = `<div class = "youHasPeople w-25">`;
         cardString += `<header class="thePeoplesHeader">`;
         cardString += `<h3>${arrayOfPeople[i].title}</h3>`;
         cardString += `<h3>${arrayOfPeople[i].name}</h3>`;
@@ -90,22 +91,23 @@ const inputFocus = () => {
         targeted.addEventListener('click', (e) => {
             document.getElementById('typeInMe').focus();
         })
+        bioInput.addEventListener('keyup', (e) => {
+            const hedgehog = document.getElementsByClassName('makeStuff');
+            const hedgie = hedgehog[0];
+            hedgie.childNodes[5].innerHTML = bioInput.value;
+        })
     }
 };
 
 
 
-//keyup, etc.
+//keyup
 
-const inputText = () => {
-    const inputElem = document.getElementById('iHasPeople');
-    const children = inputElem.children;
-    
-    const selectedOnes = children.children[1].firstElementChild;
 
-};
+
+
 
 cardBuilder();
 cardBorder();
 inputFocus();
-inputText();
+
