@@ -51,15 +51,15 @@ const printToDom = (stringToPrint, divId) => {
 const cardBuilder = () => {
     for (let i = 0; i < arrayOfPeople.length; i++) {
         let cardString = `<people class = "youHasPeople w-25">`;
-        cardString += `<header class="thePeoplesHeader">`;
+        cardString += `<header id="thePeoplesHeader">`;
         cardString += `<h3>${arrayOfPeople[i].title}</h3>`;
         cardString += `<h3>${arrayOfPeople[i].name}</h3>`;
         cardString += `</header>`;
         cardString += `<section class="thePeoplesSection">`;
         cardString += `<img src='${arrayOfPeople[i].image}'</img>`;
-        cardString += `<p class="peepsBio">${arrayOfPeople[i].bio}</p>`;
+        cardString += `<p id="peepsBio">${arrayOfPeople[i].bio}</p>`;
         cardString += `</section>`;
-        cardString += `<footer class="thePeoplesFooter">`;
+        cardString += `<footer id="thePeoplesFooter">`;
         cardString += `<p>${arrayOfPeople[i].lifespan.birth}</p>`;
         cardString += `<p>${arrayOfPeople[i].lifespan.death}</p>`;
         cardString += `</footer>`;
@@ -101,15 +101,19 @@ const bioInput = document.getElementById('inputForm');
 
 const inputText = () => {
     bioInput.addEventListener('keyup', () => {
-        const selected = document.getElementsByClassName('makeStuff');
-        const hedgie = selected[0];
-        hedgie.childNodes[7].innerHTML = bioInput.value;
-        // for (i = 0; i < hedgie.length; i++) {
-        //     hedgie.innerHTML = bioInput.value;
-        })
-    };
+        let cardText = document.getElementById('bioContainer');
+        cardText.getElementsByTagName('p')[0].innerHTML = bioInput.value;
+    })
+};
 
 
+const clearText = () => {
+    bioInput.addEventListener('keyup', (e) => {
+        if (e.keyCode === 13) {
+            bioInput.value = '';
+        }
+    })
+};
 
 
 
@@ -118,3 +122,4 @@ cardBuilder();
 cardBorder();
 inputFocus();
 inputText();
+// clearText();
