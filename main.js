@@ -46,37 +46,38 @@ const printToDom = (stringToPrint, divId) => {
     selectedDiv.innerHTML += stringToPrint;
 }
 
-const bioInput = document.getElementById('typeInMe');
+
 
 const cardBuilder = () => {
     for (let i = 0; i < arrayOfPeople.length; i++) {
-        let cardString = `<div class = "youHasPeople w-25">`;
-        cardString += `<header class="thePeoplesHeader">`;
+        let cardString = `<people class = "youHasPeople w-25">`;
+        cardString += `<header id="thePeoplesHeader">`;
         cardString += `<h3>${arrayOfPeople[i].title}</h3>`;
         cardString += `<h3>${arrayOfPeople[i].name}</h3>`;
         cardString += `</header>`;
         cardString += `<section class="thePeoplesSection">`;
         cardString += `<img src='${arrayOfPeople[i].image}'</img>`;
-        cardString += `<p class="peepsBio">${arrayOfPeople[i].bio}</p>`;
+        cardString += `<p id="peepsBio">${arrayOfPeople[i].bio}</p>`;
         cardString += `</section>`;
-        cardString += `<footer class="thePeoplesFooter">`;
+        cardString += `<footer id="thePeoplesFooter">`;
         cardString += `<p>${arrayOfPeople[i].lifespan.birth}</p>`;
         cardString += `<p>${arrayOfPeople[i].lifespan.death}</p>`;
         cardString += `</footer>`;
-        cardString += `</div>`;
-        printToDom(cardString, 'iHasPeople');
+        cardString += `</people>`;
+        printToDom(cardString, 'bioContainer');
     }
 };
 
 
 //border
 
+const hedgieCards = document.getElementsByClassName('youHasPeople');
+
 const cardBorder = () => {
-    const cardElem = document.getElementsByClassName('youHasPeople');
-    for (let i = 0; i < cardElem.length; i++) {
-        const targeted = cardElem[i];
-        targeted.addEventListener('click', (e) => {
-            targeted.classList.toggle('makeStuff');
+    for (i = 0; i < hedgieCards.length; i++) {
+        hedgieCards[i].addEventListener('click', (e) => {
+            const clickedOnCard = e.currentTarget;
+            clickedOnCard.classList.toggle('makeStuff');
         })
     }
 };
@@ -85,24 +86,28 @@ const cardBorder = () => {
 //focus
 
 const inputFocus = () => {
-    const inputElem = document.getElementsByClassName('youHasPeople');
-    for (let i = 0; i < inputElem.length; i++) {
-        const targeted = inputElem[i];
-        targeted.addEventListener('click', (e) => {
-            document.getElementById('typeInMe').focus();
-        })
-        bioInput.addEventListener('keyup', (e) => {
-            const hedgehog = document.getElementsByClassName('makeStuff');
-            const hedgie = hedgehog[0];
-            hedgie.childNodes[5].innerHTML = bioInput.value;
+    for (i = 0; i < hedgieCards.length; i++) {
+        hedgieCards[i].addEventListener('click', () => {
+            const inputF = document.getElementById('bioContainer');
+            bioInput.focus();
         })
     }
 };
 
 
-
 //keyup
 
+const bioInput = document.getElementById('inputForm');
+
+const inputText = () => {
+    bioInput.addEventListener('keyup', () => {
+        let cardText = document.getElementById('bioContainer');
+        cardText.getElementsByTagName('p')[0].innerHTML = bioInput.value;
+    })
+};
+
+
+//  
 
 
 
@@ -110,4 +115,5 @@ const inputFocus = () => {
 cardBuilder();
 cardBorder();
 inputFocus();
-
+inputText();
+// clearText();
