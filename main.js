@@ -107,13 +107,7 @@ const inputText = () => {
 };
 
 
-const clearText = () => {
-    bioInput.addEventListener('keyup', (e) => {
-        if (e.keyCode === 13) {
-            bioInput.value = '';
-        }
-    })
-};
+//  
 
 
 
