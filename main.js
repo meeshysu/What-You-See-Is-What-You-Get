@@ -57,7 +57,7 @@ const cardBuilder = () => {
         cardString += `</header>`;
         cardString += `<section class="thePeoplesSection">`;
         cardString += `<img src='${arrayOfPeople[i].image}'</img>`;
-        cardString += `<p id="peepsBio">${arrayOfPeople[i].bio}</p>`;
+        cardString += `<p id="peepsBio${i}">${arrayOfPeople[i].bio}</p>`;
         cardString += `</section>`;
         cardString += `<footer id="thePeoplesFooter">`;
         cardString += `<p>${arrayOfPeople[i].lifespan.birth}</p>`;
@@ -88,7 +88,7 @@ const cardBorder = () => {
 const inputFocus = () => {
     for (i = 0; i < hedgieCards.length; i++) {
         hedgieCards[i].addEventListener('click', () => {
-            const inputF = document.getElementById('bioContainer');
+            document.getElementById('bioContainer');
             bioInput.focus();
         })
     }
@@ -107,13 +107,7 @@ const inputText = () => {
 };
 
 
-//  
-
-
-
-
 cardBuilder();
 cardBorder();
 inputFocus();
 inputText();
-// clearText();
